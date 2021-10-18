@@ -14,7 +14,8 @@ function createGameBoard()
    let btn = new array(9);
    for(let i = 0; i < btn.length;i++)
    {
-   btn[i].innerHTML = "<button> [ ] </button>";
+        btn[i] = document.createElement("button");
+        btn[i].innerHTML = "<button> [ ] </button>";
    }
    document.getElementById('c1').appendChild(btn[0]);
    document.getElementById('c2').appendChild(btn[1]);
