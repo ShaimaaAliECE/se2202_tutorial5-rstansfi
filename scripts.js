@@ -11,6 +11,9 @@ createGameBoard()
 function createGameBoard()
 {
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
+   let btn = document.createElement('button');
+   btn.innerHTML = "<button> [ ] </button>";
+   document.getElementsByTagName('td').appendChild(btn);
    
 }
 
@@ -27,7 +30,8 @@ function takeCell(event)
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
-
+    let clickBtn = event.target();
+    clickBtn
     // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
 
     // Check if the game is over
