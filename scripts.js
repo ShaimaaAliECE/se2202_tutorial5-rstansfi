@@ -18,7 +18,7 @@ function createGameBoard()
         var cbt = document.createElement("BUTTON");
         cbt.innerHTML = btn[i];
    }
-   document.getElementById('c1').appendChild(btn[0]);
+   document.getElementById('c1').appendChild(cbt);
    document.getElementById('c2').appendChild(btn[1]);
    document.getElementById('c3').appendChild(btn[2]);
    document.getElementById('c4').appendChild(btn[3]);
