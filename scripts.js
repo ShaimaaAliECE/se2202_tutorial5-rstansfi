@@ -20,7 +20,7 @@ btn.innerHTML="<button>[ ]</button>";
         btn[i] = document.createElement("button");
         btn[i].innerHTML = "<button> [ ] </button>";
    }*/
-   document.getElementById('c2').appendChild(btn);
+   document.getElementById('c5').appendChild(btn);
    /*document.getElementById('c2').appendChild(btn[1]);
    document.getElementById('c3').appendChild(btn[2]);
    document.getElementById('c4').appendChild(btn[3]);
