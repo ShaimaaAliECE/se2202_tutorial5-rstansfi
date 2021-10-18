@@ -11,8 +11,10 @@ createGameBoard()
 function createGameBoard()
 {
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
-
-  var btn = ["[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"];
+let btn = document.createElement("button");
+btn.innerHTML = '<button>[ ]</button>';
+document.getElementById('c5').appendChild(btn);
+  /*var btn = ["[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"];
    for(let i = 0; i < btn.length;i++)
    {
         var cbt = document.createElement("BUTTON");
@@ -27,6 +29,7 @@ function createGameBoard()
    document.getElementById('c7').appendChild(btn[6]);
    document.getElementById('c8').appendChild(btn[7]);
    document.getElementById('c9').appendChild(btn[8]);
+   */
 }
 
 // Programatically add 'takeCell' as an event listener to all the buttons on the board
