@@ -12,11 +12,11 @@ function createGameBoard()
 {
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
 
-  let btn = new array(9);
+  var btn = ["[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"];
    for(let i = 0; i < btn.length;i++)
    {
-        btn[i] = document.createElement("button");
-        btn[i].innerHTML = "<button> [ ] </button>";
+        var cbt = document.createElement("BUTTON");
+        cbt.innerHTML = btn[i];
    }
    document.getElementById('c1').appendChild(btn[0]);
    document.getElementById('c2').appendChild(btn[1]);
