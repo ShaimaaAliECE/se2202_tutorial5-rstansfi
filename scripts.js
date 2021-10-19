@@ -11,28 +11,14 @@ createGameBoard()
 function createGameBoard()
 {
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
-/*for(let cells of document.getElementsByTagName("td"))
+for(let cells of document.getElementsByTagName("td"))
 {
     let btn = document.createElement("button");
     btn.innerHTML = "[ ]";
     btn.type = "button";
     document.getElementById(cells.id).appendChild(btn);
-}*/
-  var btn = new Array(9);
-   for(let i = 0; i < btn.length;i++)
-   {
-        btn[i]= document.createElement("BUTTON");
-        btn[i].innerHTML = "[ ]";
-   }
-   //document.getElementById('c1').appendChild(btn[0]);
-   document.getElementById('c2').appendChild(btn[1]);
-   document.getElementById('c3').appendChild(btn[2]);
-   document.getElementById('c4').appendChild(btn[3]);
-   document.getElementById('c5').appendChild(btn[4]);
-   document.getElementById('c6').appendChild(btn[5]);
-   document.getElementById('c7').appendChild(btn[6]);
-   document.getElementById('c8').appendChild(btn[7]);
-   document.getElementById('c9').appendChild(btn[8]);
+}
+  
    
 }
 
@@ -50,12 +36,24 @@ function takeCell(event)
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
     let clickBtn = event.target();
-    clickBtn
-    // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
-
-    // Check if the game is over
-    if (isGameOver())
+    clickBtn.innerHTML = nextPlayer;
+    if(nextPlayer === 'X')
     {
+        nextPlayer = 'O';
+    }
+    else if(nextPlayer === 'O')
+    {
+        nextPlayer = 'X';
+    }
+    document.getElementById("next-lbl").innerHTML = nextPlayer;
+    // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
+    clickBtn.disabled = true;
+    // Check if the game is over
+    if (isGameOver() === true)
+    {
+        let done = document.createElement("h1");
+        done.innerHTML = "Game Over";
+        document.getElementById("game-over-lbl").appendChild(done);
         // let the lable with the id 'game-over-lbl' display the words 'Game Over' inside <h1> element
     }
 
@@ -65,5 +63,17 @@ function takeCell(event)
 function isGameOver()
 {
     // This function returns true if all the buttons are disabled and false otherwise 
-   
+   let gameBtn = document.querySelectorAll("buttons");
+   let counter = 0;
+   for(let i = 0; i < gameBtn.length; i++)
+   {
+        if(gameBtn[i] === true)
+        {
+            counter++;
+        }
+   }
+   if(counter === gameBtn.length)
+   {
+       return true;
+   }else{return false}
 }
