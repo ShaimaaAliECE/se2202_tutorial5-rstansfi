@@ -11,20 +11,21 @@ createGameBoard()
 function createGameBoard()
 {
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
-for(let cells of document.getElementsByTagName("td"))
+/*for(let cells of document.getElementsByTagName("td"))
 {
     let btn = document.createElement("button");
     btn.innerHTML = "[ ]";
     btn.type = "button";
     document.getElementById(cells.id).appendChild(btn);
-}
-  /*var btn = ["[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"];
+}*/
+  var btn = new Array(9);
    for(let i = 0; i < btn.length;i++)
    {
-        var cbt = document.createElement("BUTTON");
-        cbt.innerHTML = btn[i];
+        btn[i]= document.createElement("BUTTON");
+        btn[i].innerHTML = "[ ]";
+        btn[i].type = "button";
    }
-   document.getElementById('c1').appendChild(cbt);
+   document.getElementById('c1').appendChild(btn[0]);
    document.getElementById('c2').appendChild(btn[1]);
    document.getElementById('c3').appendChild(btn[2]);
    document.getElementById('c4').appendChild(btn[3]);
@@ -33,7 +34,7 @@ for(let cells of document.getElementsByTagName("td"))
    document.getElementById('c7').appendChild(btn[6]);
    document.getElementById('c8').appendChild(btn[7]);
    document.getElementById('c9').appendChild(btn[8]);
-   */
+   
 }
 
 // Programatically add 'takeCell' as an event listener to all the buttons on the board
