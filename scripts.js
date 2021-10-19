@@ -23,7 +23,6 @@ function createGameBoard()
    {
         btn[i]= document.createElement("BUTTON");
         btn[i].innerHTML = "[ ]";
-        btn[i].type = "button";
    }
    document.getElementById('c1').appendChild(btn[0]);
    document.getElementById('c2').appendChild(btn[1]);
