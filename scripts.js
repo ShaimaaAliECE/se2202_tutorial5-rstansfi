@@ -1,7 +1,7 @@
 let nextPlayer = 'X'; // takes a value of either 'X' or 'O' according to the game turns
 
 //initialize the game
-
+document.getElementById("next-lbl").innerHTML = nextPlayer;
 // use the value stored in the nextPlayer variable to indicate who the next player is
 
 
@@ -11,9 +11,13 @@ createGameBoard()
 function createGameBoard()
 {
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
-let btn = document.createElement("button");
-btn.innerHTML = '<button>[ ]</button>';
-document.getElementById('c5').appendChild(btn);
+for(let cells of document.getElementsByTagName("td"))
+{
+    let btn = document.createElement("button");
+    btn.innerHTML = "[ ]";
+    btn.type = "button";
+    document.getElementById(cells.id).appendChild(btn);
+}
   /*var btn = ["[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"];
    for(let i = 0; i < btn.length;i++)
    {
