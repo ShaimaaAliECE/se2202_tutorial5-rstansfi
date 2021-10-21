@@ -14,7 +14,7 @@ function createGameBoard()
 let cells = document.querySelectorAll('td');
 for(let i = 0;i < cells.length; i++)
 {
-    cells[i].innerHTML = '<button>[ ]</button>'
+    cells[i].innerHTML = '<button>S</button>'
 }
   
    
